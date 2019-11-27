@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:re_sew/UI/home_page_body.dart';
+import 'package:re_sew/UI/Projects.dart';
+import 'package:re_sew/UI/Discover.dart';
+import 'package:re_sew/UI/Profile.dart';
+import 'package:re_sew/UI/HomePage.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+void main() {
+  runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Re/Sew',
       theme: new ThemeData(
@@ -16,55 +16,42 @@ class MyApp extends StatelessWidget {
         fontSize: 32.0,
         fontWeight: FontWeight.bold,
       ))),
-      home: MyHomePage(title: 'Re/Sew'),
-    );
-  }
+      home: BottomNavBar()));
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
+class BottomNavBar extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _BottomNavBarState createState() => _BottomNavBarState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _BottomNavBarState extends State<BottomNavBar> {
+  int _page = 2;
+  final _pageOption = [
+    Projects(),
+    Discover(),
+    HomePage(),
+    Profile(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Padding(
-            padding: EdgeInsets.fromLTRB(16, 24, 0, 0),
-            child: Text('Current Project',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xff4D5587),
-                )),
-          ),
-          new CurrentProjectCard(),
-          Padding(
-            padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
-            child: Text('Projects',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xff4D5587),
-                )),
-          ),
-          new ProjectCategoriesCard(),
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Color(0xff4D5587),
+        color: Colors.white,
+        items: <Widget>[
+          Icon(Icons.gavel, size: 30),
+          Icon(Icons.explore, size: 30),
+          Icon(Icons.home, size: 30),
+          Icon(Icons.account_circle, size: 30),
         ],
+        onTap: (index) {
+          setState(() {
+            _page = index;
+          });
+        },
       ),
-      appBar: AppBar(
-        title: Text(widget.title),
-        centerTitle: false,
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
+      body: _pageOption[_page],
     );
   }
 }

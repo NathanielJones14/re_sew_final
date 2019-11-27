@@ -39,7 +39,7 @@ List<Project> projects = [
     time: "2-5 hours",
     description:
         "A classic and timeless wash bag for travelling or storing bathroom necessities.",
-    image: "assets/img/denim_apron.png",
+    image: "assets/img/washbag.jpg",
     category: "Luggage",
   ),
   const Project(
@@ -50,18 +50,18 @@ List<Project> projects = [
     time: "2-5 hours",
     description:
         "A beautiful way to re-use scrap fabric and make a statement piece for the home.",
-    image: "assets/img/denim_apron.png",
+    image: "assets/img/Cushion.png",
     category: "Home",
   ),
   const Project(
     id: "4",
-    name: "Work Apron",
-    difficulty: "Hard",
+    name: "Jeans",
+    difficulty: "Easy",
     material: "Denim",
-    time: "5-10 hours",
+    time: "1-2 hours",
     description:
-        "This apron reuses a single pair of jeans in order to make a long lasting and highly useful apron.",
-    image: "assets/img/denim_apron.png",
+        "This project repairas a pair of broken jeans using traditional techniques.",
+    image: "assets/img/jeans.jpg",
     category: "Other",
   ),
 ];

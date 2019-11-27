@@ -6,7 +6,7 @@ class Categories {
   const Categories({this.categories, this.name, this.image});
 }
 
-List<Categories> categories = [
+final List<Categories> categoryItems = [
   const Categories(
     categories: "Clothing",
     name: "Clothing",
@@ -15,7 +15,7 @@ List<Categories> categories = [
   const Categories(
     categories: "Luggage",
     name: "Luggage",
-    image: "assets/img/Lugagge.jpg",
+    image: "assets/img/Luggage.jpg",
   ),
   const Categories(
     categories: "Home",

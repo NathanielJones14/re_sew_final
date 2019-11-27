@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:re_sew/Models/categories_model.dart';
+import 'package:re_sew/Models/projects_model.dart';
 import 'package:re_sew/Models/text_style.dart';
 
-class ProjectCategories extends StatelessWidget {
-  final Categories categories;
+class RecommendedProjects extends StatelessWidget {
+  final Project project;
 
-  ProjectCategories(this.categories);
-
+  RecommendedProjects(this.project);
   @override
   Widget build(BuildContext context) {
     final categoriesCardContent = new Container(
-      margin: const EdgeInsets.fromLTRB(16, 16, 8, 0),
+      margin: new EdgeInsets.fromLTRB(8.0, 16.0, 0.0, 0.0),
       constraints: new BoxConstraints.expand(),
       child: new Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(
-            categories.name,
+          new Text(
+            project.name,
             style: Style.headerTextStyle,
           ),
         ],
@@ -25,11 +24,11 @@ class ProjectCategories extends StatelessWidget {
 
     final categoriesCard = new Container(
       child: categoriesCardContent,
-      height: 120,
-      width: 120,
+      height: 120.0,
+      width: 160.0,
       decoration: new BoxDecoration(
         image: new DecorationImage(
-          image: new AssetImage(categories.image),
+          image: new AssetImage(project.image),
           fit: BoxFit.cover,
         ),
         shape: BoxShape.rectangle,
@@ -44,13 +43,13 @@ class ProjectCategories extends StatelessWidget {
       ),
     );
 
-    return new FlatButton(
-      child: new Stack(
-        children: <Widget>[
-          categoriesCard,
-        ],
-      ),
-      onPressed: () {},
-    );
+    return new Container(
+        height: 120.0,
+        margin: const EdgeInsets.fromLTRB(16, 16, 0, 0),
+        child: new Stack(
+          children: <Widget>[
+            categoriesCard,
+          ],
+        ));
   }
 }
