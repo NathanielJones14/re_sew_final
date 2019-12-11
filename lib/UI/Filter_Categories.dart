@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:re_sew/Models/filters_model.dart';
-import 'package:re_sew/Models/text_style.dart';
+import 'package:re_sew/Utils/text_style.dart';
 
 class FilterCategories extends StatelessWidget {
   final Filters filters;
@@ -35,32 +35,34 @@ class FilterCategories extends StatelessWidget {
     );
 
     final filterCategoriesName = Padding(
-        padding: EdgeInsets.fromLTRB(16, 16, 0, 0),
+        padding: EdgeInsets.fromLTRB(16, 8, 0, 0),
         child: Text(
           filters.name,
           style: Style.header2TextStyle,
         ));
 
-    final filterCategoriesArrow = Icon(
-      Icons.arrow_forward_ios,
-      color: Color(0xff4D5587),
-      size: 30.0,
-    );
+    final filterCategoriesArrow = Padding(
+        padding: EdgeInsets.fromLTRB(16, 8, 0, 0),
+        child: Icon(
+          Icons.arrow_forward_ios,
+          color: Color(0xff4D5587),
+          size: 30.0,
+        ));
 
-    return new FlatButton(
-        padding: EdgeInsets.fromLTRB(16, 8, 24, 0),
-        splashColor: Colors.transparent,
-        highlightColor: Colors.transparent,
-        onPressed: () {},
-        child: new Row(children: <Widget>[
-          filterCategoriesCard,
-          filterCategoriesName,
-          new Expanded(
-              child: new Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: <Widget>[
-                filterCategoriesArrow,
-              ]))
-        ]));
+    return new Container(
+        height: 100,
+        margin: const EdgeInsets.symmetric(
+          vertical: 8.0,
+          horizontal: 16.0,
+        ),
+        child: new Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              filterCategoriesCard,
+              filterCategoriesName,
+              Spacer(),
+              filterCategoriesArrow,
+            ]));
   }
 }

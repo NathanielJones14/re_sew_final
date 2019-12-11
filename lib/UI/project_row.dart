@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:re_sew/Models/projects_model.dart';
-import 'package:re_sew/Models/text_style.dart';
+import 'package:re_sew/Utils/text_style.dart';
+import 'package:re_sew/UI/project_detail_page.dart';
 
-class CurrentProjects extends StatelessWidget {
+class BaseProjectCard extends StatelessWidget {
   final Project project;
 
-  CurrentProjects(this.project);
+  BaseProjectCard(this.project);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,7 @@ class CurrentProjects extends StatelessWidget {
 
     final projectCard = new Container(
       child: projectCardContent,
-      height: 180.0,
+      height: 200.0,
       decoration: new BoxDecoration(
         image: new DecorationImage(
           image: new AssetImage(project.image),
@@ -50,16 +51,24 @@ class CurrentProjects extends StatelessWidget {
       ),
     );
 
-    return new Container(
-        height: 180,
-        margin: const EdgeInsets.symmetric(
-          vertical: 16.0,
-          horizontal: 16.0,
-        ),
-        child: new Stack(
-          children: <Widget>[
-            projectCard,
-          ],
-        ));
+    return new GestureDetector(
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) {
+              return ProjectDetailPage(project);
+            }),
+          );
+        },
+        child: Container(
+            height: 200,
+            margin: const EdgeInsets.symmetric(
+              vertical: 8.0,
+              horizontal: 16.0,
+            ),
+            child: new Stack(
+              children: <Widget>[
+                projectCard,
+              ],
+            )));
   }
 }

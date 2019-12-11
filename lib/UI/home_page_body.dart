@@ -5,6 +5,6 @@ import 'package:re_sew/Models/projects_model.dart';
 class CurrentProjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new CurrentProjects(projects[0]);
+    return new BaseProjectCard(projects[0]);
   }
 }

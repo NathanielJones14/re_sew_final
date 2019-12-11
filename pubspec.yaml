@@ -21,6 +21,8 @@ dependencies:
     sdk: flutter
 
   curved_navigation_bar: ^0.3.0
+  flutter_staggered_grid_view:
+  flutter_launcher_icons:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
@@ -30,6 +32,10 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+flutter_icons:
+  image_path: 'assets/img/Re-Sew_Icon.png'
+  android: true
+  ios: true
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -79,6 +85,88 @@ flutter:
     - assets/img/Cushion.png
     - assets/img/jeans.jpg
     - assets/img/washbag.jpg
+    - assets/img/Cotton.png
+    - assets/img/Polyester.jpg
+    - assets/img/Wool.jpg
+    - assets/img/Denim.jpg
+    - assets/img/Learning_To_Sew.jpg
+    - assets/img/HandSew.jpg
+    - assets/img/Master.jpg
+    - assets/img/Medium.jpg
+    - assets/img/Sewing_Machine.jpg
+    - assets/img/Long.jpg
+    - assets/img/Sewing_dark.jpg
+    - assets/img/Pink_fabric.jpg
+    - assets/img/spools.jpg
+    - assets/img/Apron/ApronStep1.jpg
+    - assets/img/Apron/ApronStep2.jpg
+    - assets/img/Apron/ApronStep3.jpg
+    - assets/img/Apron/ApronStep4.jpg
+    - assets/img/Apron/ApronStep5.jpg
+    - assets/img/Apron/ApronStep6.jpg
+    - assets/img/Apron/ApronStep7.jpg
+    - assets/img/Apron/ApronStep8.jpg
+    - assets/img/Apron/ApronStep9.jpg
+    - assets/img/Apron/ApronStep10.jpg
+    - assets/img/JeanRepair/JeanRepairStep1.jpg
+    - assets/img/JeanRepair/JeanRepairStep2.jpg
+    - assets/img/JeanRepair/JeanRepairStep3.jpg
+    - assets/img/JeanRepair/JeanRepairStep4.jpg
+    - assets/img/JeanRepair/JeanRepairStep5.jpg
+    - assets/img/JeanRepair/JeanRepairStep6.jpg
+    - assets/img/JeanRepair/JeanRepairStep7.jpg
+    - assets/img/JeanRepair/JeanRepairStep8.jpg
+    - assets/img/JeanRepair/JeanRepairStep9.jpg
+    - assets/img/JeanRepair/JeanRepairStep10.jpg
+    - assets/img/ClothingUpgrade/ClothingUpgrade1.jpg
+    - assets/img/ClothingUpgrade/ClothingUpgrade2.jpg
+    - assets/img/ClothingUpgrade/ClothingUpgrade3.jpg
+    - assets/img/ClothingUpgrade/ClothingUpgrade4.jpg
+    - assets/img/ClothingUpgrade/ClothingUpgrade5.jpg
+    - assets/img/ClothingUpgrade/ClothingUpgrade6.jpg
+    - assets/img/ClothingUpgrade/ClothingUpgrade7.jpg
+    - assets/img/ClothingUpgrade/ClothingUpgrade8.jpg
+    - assets/img/ClothingUpgrade/ClothingUpgrade9.jpg
+    - assets/img/ClothingUpgrade/ClothingUpgrade10.jpg
+    - assets/img/Nathaniel.png
+    - assets/img/ToteBag/ToteStep1.jpg
+    - assets/img/ToteBag/ToteStep2.jpg
+    - assets/img/ToteBag/ToteStep3.jpg
+    - assets/img/ToteBag/ToteStep4.jpg
+    - assets/img/ToteBag/ToteStep5.jpg
+    - assets/img/ToteBag/ToteStep6.jpg
+    - assets/img/ToteBag/ToteStep7.jpg
+    - assets/img/ToteBag/ToteStep8.jpg
+    - assets/img/ToteBag/ToteStep9.jpg
+    - assets/img/ToteBag/ToteStep10.jpg
+    - assets/img/WashBag/Washbag1.jpg
+    - assets/img/WashBag/Washbag2.jpg
+    - assets/img/WashBag/Washbag3.jpg
+    - assets/img/WashBag/Washbag4.jpg
+    - assets/img/WashBag/Washbag5.jpg
+    - assets/img/WashBag/Washbag6.jpg
+    - assets/img/WashBag/Washbag7.jpg
+    - assets/img/WashBag/Washbag8.jpg
+    - assets/img/WashBag/Washbag9.jpg
+    - assets/img/WashBag/Washbag10.jpg
+    - assets/img/WashBag/Washbag11.jpg
+    - assets/img/Cushion/Cushion1.jpg
+    - assets/img/Cushion/Cushion2.jpg
+    - assets/img/Cushion/Cushion3.jpg
+    - assets/img/Cushion/Cushion4.jpg
+    - assets/img/Cushion/Cushion5.jpg
+    - assets/img/Cushion/Cushion6.jpg
+    - assets/img/Cushion/Cushion7.png
+    - assets/img/Cushion/Cushion8.jpg
+    - assets/img/Cushion/Cushion9.jpg
+    - assets/img/Cushion/Cushion10.jpg
+    - assets/img/Quality.jpg
+    - assets/img/Swap.jpg
+    - assets/img/Boro.jpg
+    - assets/img/Upcycle.jpg
+    - assets/img/ToteBag/ToteBag.png
+    - assets/img/ToteBag/Tote.jpg
+    - assets/img/JeanRepair/BoroJean.jpg
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -4,18 +4,25 @@ import 'package:re_sew/UI/Discover.dart';
 import 'package:re_sew/UI/Profile.dart';
 import 'package:re_sew/UI/HomePage.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:re_sew/Utils/Colour.dart';
 
 void main() {
   runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Re/Sew',
       theme: new ThemeData(
+          brightness: Brightness.light,
+          primaryColor: brand_01Color,
+          accentColor: accent_01Color,
+          buttonColor: accent_01Color,
+          bottomAppBarColor: whiteColor,
+          scaffoldBackgroundColor: copy_02Color,
           primaryTextTheme: TextTheme(
               title: TextStyle(
-        color: Color(0xff4D5587),
-        fontSize: 32.0,
-        fontWeight: FontWeight.bold,
-      ))),
+            color: brand_01Color,
+            fontSize: 32.0,
+            fontWeight: FontWeight.bold,
+          ))),
       home: BottomNavBar()));
 }
 
@@ -25,11 +32,11 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  int _page = 2;
+  int _page = 0;
   final _pageOption = [
-    Projects(),
-    Discover(),
     HomePage(),
+    Discover(),
+    ReduceWaste(),
     Profile(),
   ];
 
@@ -37,13 +44,29 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Color(0xff4D5587),
-        color: Colors.white,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        color: Theme.of(context).bottomAppBarColor,
         items: <Widget>[
-          Icon(Icons.gavel, size: 30),
-          Icon(Icons.explore, size: 30),
-          Icon(Icons.home, size: 30),
-          Icon(Icons.account_circle, size: 30),
+          Icon(
+            Icons.home,
+            size: 30,
+            color: accent_01Color,
+          ),
+          Icon(
+            Icons.explore,
+            size: 30,
+            color: accent_01Color,
+          ),
+          Icon(
+            Icons.landscape,
+            size: 30,
+            color: accent_01Color,
+          ),
+          Icon(
+            Icons.account_circle,
+            size: 30,
+            color: accent_01Color,
+          ),
         ],
         onTap: (index) {
           setState(() {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:re_sew/Models/categories_model.dart';
-import 'package:re_sew/Models/text_style.dart';
+import 'package:re_sew/Utils/text_style.dart';
 
 class ProjectCategories extends StatelessWidget {
   final Categories categories;
@@ -10,8 +10,7 @@ class ProjectCategories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final categoriesCardContent = new Container(
-      margin: const EdgeInsets.fromLTRB(16, 16, 8, 0),
-      constraints: new BoxConstraints.expand(),
+      margin: const EdgeInsets.fromLTRB(16, 16, 0, 0),
       child: new Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -44,13 +43,14 @@ class ProjectCategories extends StatelessWidget {
       ),
     );
 
-    return new FlatButton(
+    return Container(
+      height: 120,
+      margin: const EdgeInsets.fromLTRB(16, 16, 0, 0),
       child: new Stack(
         children: <Widget>[
           categoriesCard,
         ],
       ),
-      onPressed: () {},
     );
   }
 }

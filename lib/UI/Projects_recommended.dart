@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:re_sew/Models/projects_model.dart';
-import 'package:re_sew/Models/text_style.dart';
+import 'package:re_sew/Utils/text_style.dart';
+import 'package:re_sew/UI/project_detail_page.dart';
 
 class RecommendedProjects extends StatelessWidget {
   final Project project;
@@ -9,7 +10,7 @@ class RecommendedProjects extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final categoriesCardContent = new Container(
-      margin: new EdgeInsets.fromLTRB(8.0, 16.0, 0.0, 0.0),
+      margin: new EdgeInsets.fromLTRB(8, 16, 0, 0),
       constraints: new BoxConstraints.expand(),
       child: new Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,13 +44,21 @@ class RecommendedProjects extends StatelessWidget {
       ),
     );
 
-    return new Container(
-        height: 120.0,
-        margin: const EdgeInsets.fromLTRB(16, 16, 0, 0),
-        child: new Stack(
-          children: <Widget>[
-            categoriesCard,
-          ],
-        ));
+    return new GestureDetector(
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) {
+              return ProjectDetailPage(project);
+            }),
+          );
+        },
+        child: Container(
+            height: 120.0,
+            margin: const EdgeInsets.fromLTRB(16, 16, 0, 0),
+            child: new Stack(
+              children: <Widget>[
+                categoriesCard,
+              ],
+            )));
   }
 }
