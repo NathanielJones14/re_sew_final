@@ -10,7 +10,7 @@ final List<Reduce> reduceWasteTypes = [
   const Reduce(
     title: "Repair",
     body:
-        "Repairing clothing is the ultimate way to extending the life of the item and its materials. Traditional Japanese method Boro has been a key way to repair for thousands of years, and is more fashionable than ever. Repair to craete stories and promote longevity. ",
+        "Repairing clothing is the ultimate way to extending the life of the item and its materials. Traditional Japanese method Boro has been a key way to repair for thousands of years, and is more fashionable than ever. Repair to create stories and promote longevity. ",
     image: "assets/img/Boro.jpg",
   ),
   const Reduce(
